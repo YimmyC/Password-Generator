@@ -1,5 +1,8 @@
 // This is my database: numbers, special characters, lowercase characters, uppercase letters
-let number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']; // create a number array with elements (numbers) 0-9
+let number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+let upper = ["A", "B"];
+let lower = ["a", "b"];
+let special = [",", "."];
 let passwordLength = 4;
 let password = [];
 
@@ -8,12 +11,42 @@ let password = [];
 let generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
+  let allChoices = [];
+  
+  // ask user how long is password
+  let passwordLength = window.prompt("Please choose a number between 8-20 for your password length");
+  // TODO: validate that they entered a number between 8 and 20
+  // ask user if they want numbers
+  let isNumbers = window.confirm("Do you want to include numbers?");
+  // ask user if they want uppercase
+  let isUpper = window.confirm("Do you want to include upper case?");
+
+  // ask user if they want lowercase
+  let isLower = window.confirm("Do you want to include lower case?");
+
+  // ask user if they want special characters
+  let isSpecial = window.confirm("Do you want to include special characters?");
+
   password = [];
-  for(let i = 0; i < passwordLength + 1; i++){
-    let maximum = number.length - 1;
+  if (isNumbers === true) {
+    //TODO: pick one random number and push it to password
+      allChoices = allChoices.concat(number);
+  }
+  if (isUpper === true) {
+    allChoices = allChoices.concat(upper);
+}
+if (isLower === true) {
+  allChoices = allChoices.concat(lower);
+}
+if (isSpecial === true) {
+  allChoices = allChoices.concat(special);
+}
+  for(let i = 0; i < passwordLength; i++){
+    
+    let maximum = allChoices.length - 1;
     let minimum = 0;
     let rnd = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-    password.push(number[rnd]);
+    password.push(allChoices[rnd]);
   }
   
   // create a password with random numbers
