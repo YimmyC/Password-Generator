@@ -87,6 +87,11 @@ function generatePassword() {
   
   // ask user how long is password
   let passwordLength = window.prompt("Please choose a number between 8-20 for your password length");
+    if (passwordLength<8 || passwordLength>20) {
+      window.alert(`Password length not within range`);
+      return;
+      
+    }
   // TODO: validate that they entered a number between 8 and 20
   // ask user if they want numbers
   let isNumbers = window.confirm("Do you want to include numbers?");
