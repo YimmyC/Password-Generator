@@ -106,6 +106,7 @@ function generatePassword() {
   // ask user if they want special characters
   let isSpecial = window.confirm("Do you want to include special characters?");
 
+  
   password = [];
   if (isNumbers === true) {
     //TODO: pick one random number and push it to password
