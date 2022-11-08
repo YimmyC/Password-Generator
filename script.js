@@ -110,15 +110,34 @@ function generatePassword() {
   if (isNumbers === true) {
     //TODO: pick one random number and push it to password
       allChoices = allChoices.concat(number);
+      let maximum = number.length - 1;
+      let rnd = Math.floor(Math.random() * (number.length - 0 + 1)) + 0;
+      password.push(number[rnd]);
+      passwordLength --;
   }
   if (isUpper === true) {
     allChoices = allChoices.concat(upper);
+    let maximum = upper.length - 1;
+      let rnd = Math.floor(Math.random() * (upper.length - 0 + 1)) + 0;
+      password.push(upper[rnd]);
+      passwordLength --;
+    
 }
 if (isLower === true) {
   allChoices = allChoices.concat(lower);
+  let maximum = lower.length - 1;
+      let rnd = Math.floor(Math.random() * (lower.length - 0 + 1)) + 0;
+      password.push(lower[rnd]);
+      passwordLength --;
+  
 }
 if (isSpecial === true) {
   allChoices = allChoices.concat(special);
+  let maximum = special.length - 1;
+      let rnd = Math.floor(Math.random() * (special.length - 0 + 1)) + 0;
+      password.push(special[rnd]);
+      passwordLength --;
+  
 }
   for(let i = 0; i < passwordLength; i++){
     
