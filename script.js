@@ -87,6 +87,10 @@ function generatePassword() {
   
   // ask user how long is password
   let passwordLength = window.prompt("Please choose a number between 8-128 for your password length");
+    // if (typeof passwordLength === 'string') {
+    //   window.alert(`Must enter a number`);
+    //   return;
+    // } else 
     if (passwordLength<8 || passwordLength>128) {
       window.alert(`Password length not within range`);
       return;
